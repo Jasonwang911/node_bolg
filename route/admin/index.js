@@ -36,5 +36,8 @@ module.exports = function() {
 	// 后台管理首页--导航页的路由
 	router.use('/banners', require('./banner')());
 
+	// 用户评价页面的路由
+	router.use('/custom', require('./custom')());
+
 	return router;
 }
