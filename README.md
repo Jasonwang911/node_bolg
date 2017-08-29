@@ -5,15 +5,15 @@
 # 文件结构
 > 
 > |--libs                    自定义的库<br />
->      |--common.js          MD5签名<br />
+> &nbsp;&nbsp;    |--common.js          MD5签名<br />
 > |--node_modules            依赖文件<br />
 > |--static                  静态文件<br />
->      |--upload             用户上传的文件<br />
+>  &nbsp;&nbsp;    |--upload             用户上传的文件<br />
 > |--template                模板<br />
->      |--admin<br />
->           |--components    公用组件文件夹<br />
->           |--<br />
->      |--web<br />
+> &nbsp;&nbsp;     |--admin<br />
+> &nbsp;&nbsp;&nbsp;&nbsp;          |--components    公用组件文件夹<br />
+>  &nbsp;&nbsp;&nbsp;&nbsp;         |--<br />
+>  &nbsp;&nbsp;    |--web<br />
 > |--route                   路由<br />
 >      |--admin<br />
 >           |--login.ejs     管理员登录 <br />
