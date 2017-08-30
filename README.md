@@ -15,6 +15,6 @@
 > 欢迎一同学习，一起进步
 
 # 遇到的问题简单的记录
-> &nbsp; &nbsp; &nbsp; &nbsp;报错 ： The header content contains invalid characters  升级 express-static 到 1.1.0 以上版本，解决<br />
-> &nbsp; &nbsp; &nbsp; &nbsp;评价管理部分，在处理头像上传的过程中分为添加和修改，修改部分又分为有头像上传的修改和无头像上传的修改， 需要在 fs.rename 的回调中分别进行处理 <br />
-> &nbsp; &nbsp; &nbsp; &nbsp;在处理文件上传的时候 表单中必须添加 enctype="multipart/form-data" 否则 req.files 为 undefined
+> &nbsp; &nbsp;报错 ： The header content contains invalid characters  升级 express-static 到 1.1.0 以上版本，解决<br />
+> &nbsp; &nbsp;评价管理部分，在处理头像上传的过程中分为添加和修改，修改部分又分为有头像上传的修改和无头像上传的修改， 需要在 fs.rename 的回调中分别进行处理 <br />
+> &nbsp; &nbsp;在处理文件上传的时候 表单中必须添加 enctype="multipart/form-data" 否则 req.files 为 undefined
