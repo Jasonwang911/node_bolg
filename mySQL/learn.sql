@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50536
 File Encoding         : 65001
 
-Date: 2017-08-29 15:17:09
+Date: 2017-08-30 16:17:40
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -57,14 +57,15 @@ CREATE TABLE `banner_table` (
   `description` varchar(300) NOT NULL COMMENT '首页banner的描述',
   `href` varchar(300) NOT NULL COMMENT '首页banner的跳转链接',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of banner_table
 -- ----------------------------
-INSERT INTO `banner_table` VALUES ('1', '日本引进陆基“宙斯盾”面临三大难题 日媒：俄这关难过', '参考消息网8月29日报道 日本《朝日新闻》8月28日发表题为《引进陆基“宙斯盾”系统面临三大课题》的报道称，为对抗朝鲜的导弹试射，防卫省已经做出新的拦截态势，方针就是从美国引进陆基“宙斯盾”导弹拦截系统。如果实现，日本将成为全球第三个部署有该系统的国家。但除了导弹拦截技术原本存在的难度之外，还面临巨额成本以及来自周边国家的强烈反对。', 'http://www.dzwww.com/xinwen/shehuixinwen/201708/t20170829_16353562.htm');
+INSERT INTO `banner_table` VALUES ('1', '777', '参考消息网8月29日报道 日本《朝日新闻》8月28日发表题为《引进陆基“宙斯盾”系统面临三大课题》的报道称，为对抗朝鲜的导弹试射，防卫省已经做出新的拦截态势，方针就是从美国引进陆基“宙斯盾”导弹拦截系统。如果实现，日本将成为全球第三个部署有该系统的国家。但除了导弹拦截技术原本存在的难度之外，还面临巨额成本以及来自周边国家的强烈反对。', 'http://www.dzwww.com/xinwen/shehuixinwen/201708/t20170829_16353562.htm');
 INSERT INTO `banner_table` VALUES ('2', '俄向或阿联酋出售无人战车 已在叙利亚投入实战测试', '观察者网报道，俄罗斯塔斯社29日报道，俄联邦军事技术合作局局长迪米特里·谢戈耶夫表示，尽管尚未接到相关的官方采购请求，但来自多个国家的用户，尤其是阿联酋的代表已经与俄方接触，谈及“天王星9”无人战车。俄罗斯“天王星9”无人战车战斗全重10吨，控制员可在3000米外遥控该车进行作战，对于资金富裕而人力不足的一些国家来说，这似乎是一种很有诱惑力的新型武器。http://www.hkdq.net/ttpl/2017/0829/74806.html', 'http://www.hkdq.net/ttpl/2017/0829/74806.html');
 INSERT INTO `banner_table` VALUES ('3', '美国最大死敌自研五代战机对付北约，外媒称歼31隐身技术或出口', '以提到第五代隐身战斗机，大家第一个想到的自然会是中国的歼-20、美国的F-22F35、俄罗斯的T-50，中美俄不仅军事实力长期保持快速增长，战斗机之间的代差上，中国已经从八十年代的完全落后的局面中走出来，中国不仅有歼-20，还有了歼-31这款外形非常漂亮帅气的隐身歼击机，然而最近从伊朗传来一个消息让中国网友乐了。', 'http://www.toutiao.com/a6459452425148301838/');
+INSERT INTO `banner_table` VALUES ('4', '直击：歼20战机低空起飞，震撼场面，让国人自豪！', '歼-20是中航工业成都飞机工业集团公司为中国人民解放军研制的一款单座、双发、高隐身性、高机动性第四代战斗机，0采用了单座、双发、全动双垂尾、DSI鼓包式进气道、上反鸭翼带尖拱边条的鸭式气动布局。', 'http://mil.eastday.com/a/170829085916963.html');
 
 -- ----------------------------
 -- Table structure for bolg_table
@@ -116,11 +117,12 @@ CREATE TABLE `custom_evaluation_table` (
   `description` varchar(200) NOT NULL COMMENT '用户评价的详情',
   `src` varchar(300) NOT NULL COMMENT '用户评价的图片src',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of custom_evaluation_table
 -- ----------------------------
+INSERT INTO `custom_evaluation_table` VALUES ('17', '这个网站真好，特别好，真棒，特别棒', '做这个网站的人真帅，特别帅，真厉害，特别厉害', '65bb224d79de2b381a39269e812b70ec.png');
 
 -- ----------------------------
 -- Table structure for intro_table

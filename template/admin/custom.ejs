@@ -40,26 +40,26 @@
             <th><img width="32" height="32" src="/upload/<%=evaluations[i].src%>"></th>
             <th width="10%">
               <a href="?act=mod&id=<%=evaluations[i].ID%>">修改</a>
-              <a href="?act=del&id=<%=evaluations[i].ID%>">删除</a>
+              <a href="?act=del&id=<%=evaluations[i].ID%>" onclick="return confirm('你真的要删吗？')">删除</a>
             </th>
           </tr>
           <% } %>
         </tbody>
       </table>
       <!-- 修改的弹出框 -->
-     <!--  <% if(typeof mod_data!='undefined'){ %>
+      <% if(typeof mod_data!='undefined'){ %>
       <div class="shadow"></div>
       <div class="mod_dialog">
-        <form action="?" method="post">
+        <form action="?" method="post" enctype="multipart/form-data">
           <input type="hidden" name="mod_id" value="<%=mod_data.ID%>" />
           标题：<input type="text" name="title" value="<%=mod_data.title%>"><br />
           描述：<textarea name="description"><%=mod_data.description%></textarea><br />
-          链接：<input type="text" name="href" value="<%=mod_data.href%>"><br />
+          链接：<input type="file" name="href"><br />
           <input type="submit" value="修改">
-          <a href="/admin/banners">取消修改</a>
+          <a href="/admin/custom">取消修改</a>
         </form>
       </div>
-      <% } %> -->
+      <% } %>
     </div>
   </body>
 </html>

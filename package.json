@@ -7,7 +7,7 @@
     "ejs": "^2.5.5",
     "express": "^4.14.0",
     "express-route": "^0.1.4",
-    "express-static": "^1.0.3",
+    "express-static": "^1.1.0",
     "multer": "^1.2.1",
     "mysql": "^2.12.0"
   }

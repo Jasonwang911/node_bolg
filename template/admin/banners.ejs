@@ -40,7 +40,7 @@
             <th><%=banners[i].href%></th>
             <th width="10%">
               <a href="?act=mod&id=<%=banners[i].ID%>">修改</a>
-              <a href="?act=del&id=<%=banners[i].ID%>">删除</a>
+              <a href="?act=del&id=<%=banners[i].ID%>" onclick="return confirm('你真的要删吗？')">删除</a>
             </th>
           </tr>
           <% } %>

@@ -13,3 +13,5 @@
 #
 > QQ： 773983210
 > 欢迎一同学习，一起进步
+
+报错 ： The header content contains invalid characters  升级 express-static 到 1.1.0 以上版本，解决

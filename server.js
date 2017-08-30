@@ -12,6 +12,7 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const consolidate = require('consolidate');
 const expressRoute = require('express-route');
+const path = require('path');
 
 // 创建服务
 const server = express();
@@ -38,8 +39,9 @@ server.use(cookieParser());
 
 // 3.ejs模板
 server.engine('html', consolidate.ejs);
-server.set('views', 'template');
-server.set('view engine', 'html');
+// server.set('views', 'template');
+server.set('views', path.join(__dirname, 'template'));
+server.set('view engine', 'ejs');
 
 // 4.route
 server.use('/', require('./route/web.js')());

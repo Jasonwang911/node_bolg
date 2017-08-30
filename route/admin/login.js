@@ -15,7 +15,7 @@ module.exports = function() {
 
 	// 登陆页面
 	router.get('/', (req, res) => {
-		res.render('admin/login.ejs', {});
+		res.render('admin/login', {});
 	});
 
 	// 处理登陆页面的表单操作
