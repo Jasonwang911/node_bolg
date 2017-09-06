@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台管理首页</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- 首页模板的css文件 -->
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Jason博客后台管理系统</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">管理首页</a></li>
+                <li><a href="#">banner设置</a></li>
+                <li><a href="#">bolg设置</a></li>
+                <li><a href="#">联系方式</a></li>
+                <li><a href="#">用户评价</a></li>
+                <li><a href="#">商品介绍</a></li>
+                <li><a href="#">留言管理</a></li>
+                <li><a href="#">新闻管理</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+              <input type="text" class="form-control" placeholder="点击搜索">
+            </form>
+          </div>
+        </div>
+      </nav>
+  
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+              <li><a href="http://localhost:3000/admin">管理首页 </a></li>
+              <li class="active"><a href="#">banner设置<span class="sr-only">(current)</span></a></li>
+              <li><a href="#">bolg设置</a></li>
+              <li><a href="#">联系方式</a></li>
+              <li><a href="#">用户评价</a></li>
+              <li><a href="#">商品介绍</a></li>
+              <li><a href="#">留言管理</a></li>
+              <li><a href="#">新闻管理</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <!-- <h1 class="page-header">Dashboard</h1> -->
+  
+            <!-- <div class="row placeholders">
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>Label</h4>
+                <span class="text-muted">Something else</span>
+              </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>Label</h4>
+                <span class="text-muted">Something else</span>
+              </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>Label</h4>
+                <span class="text-muted">Something else</span>
+              </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>Label</h4>
+                <span class="text-muted">Something else</span>
+              </div>
+            </div> -->
+  
+            <h2 class="sub-header">banner设置</h2>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th style="width:100px">ID</th>
+                    <th style="width:300px">标题</th>
+                    <th style="width:400px">描述</th>
+                    <th style="width:20%">链接URL</th>
+                    <th style="width:100px">管理</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+</body>
+    <script src="/javascripts/jquery.js"></script>
+    <script>
+      $.ajax({
+        type: 'post',
+        url: '/admin',
+        data: {},
+        dataType: 'json',
+        success: function(data) {
+          $('.table-responsive tbody tr').remove();
+          let trInner = '';
+          for(let i = 0 ; i < data.data.length; i++) {
+            trInner = trInner + `<tr>
+                                  <td>${data.data[i].ID}</td>
+                                  <td>${data.data[i].title}</td>
+                                  <td>${data.data[i].description}</td>
+                                  <td>${data.data[i].href}</td>
+                                  <td>
+                                    <span>添加</span>
+                                    <span>删除</span>
+                                  </td>
+                                </tr>`;
+          }
+          $('.table-responsive tbody').html(trInner);
+        },
+        error: function(err) {
+          alert(err);
+        }
+      });
+    </script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</html>
