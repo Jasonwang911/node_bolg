@@ -2,6 +2,11 @@ var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
+// jwt 相关中间键
+var expressJwt = require("express-jwt");
+var jwt = require("jsonwebtoken");
+var shortid = require("shortid");
+// jwt 相关中间键引用结束
 var cookieParser = require('cookie-parser');
 var cookieSession = require('cookie-session');
 var bodyParser = require('body-parser');
@@ -28,7 +33,21 @@ app.set('view engine', 'html');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({
+	extended: false
+}));
+// JWT 引入
+app.use(expressJwt({
+	secret: "secret"
+}).unless({
+	path: ["/"]
+}));
+app.use(function(err, req, res, next) {
+	if (err.name === "UnauthorizedError") {
+		res.status(401).send("invalid token");
+	}
+});
+// 
 app.use(cookieParser());
 (function() {
 	let keys = [];
@@ -52,20 +71,20 @@ app.use('/admin/', require('./routes/admin/index.js')());
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+	var err = new Error('Not Found');
+	err.status = 404;
+	next(err);
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+	// set locals, only providing error in development
+	res.locals.message = err.message;
+	res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+	// render the error page
+	res.status(err.status || 500);
+	res.render('error');
 });
 
 module.exports = app;
